@@ -1,26 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { hashFragment, extractAccessToken, extractTokenType } from './util/fragmentURL';
+import Login from './components/login';
+import SearchArtist from './components/search_artist';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      access_token: '',
+      token_type: '',
+    }
+  }
+
+  componentDidMount() {
+    const hash = window.location.hash
+    if(hash){
+      const hashResult = hashFragment(hash)
+      const access_token = extractAccessToken(hashResult)
+      const token_type = extractTokenType(hashResult)
+      this.setState({
+        access_token: access_token,
+        token_type: token_type
+      })
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          {this.state.access_token ? <SearchArtist /> : <Login />}
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
