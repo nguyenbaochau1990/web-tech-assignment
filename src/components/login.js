@@ -6,11 +6,8 @@ class Login extends Component {
   render() {
     const URL = `${loginEndpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`
     return(
-      <a
-        className='btn btn--loginApp-link'
-        href={URL}
-      >
-        click here
+      <a href={URL}>
+        <button>Login</button>
       </a>
     )
   }

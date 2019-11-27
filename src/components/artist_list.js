@@ -3,13 +3,19 @@ import ArtistDetail from './artist_detail'
 
 const ArtistList = (props) => {
   const artistItems = props.artists.map((artist) => {
-    return <ArtistDetail key={artist.id} artist={artist} />
+    return (
+      <tr key={artist.id}>
+        <ArtistDetail artist={artist} />
+      </tr>
+    )
   })
 
   return(
-    <ul>
-      {artistItems}
-    </ul>
+    <table>
+      <thead>
+        {artistItems}
+      </thead>
+    </table>
   )
 }
 

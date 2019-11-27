@@ -1,3 +1,15 @@
+Piste d'amélioration:
+1. Clairement CSS... Je n'ai rien touché du CSS, juste la partie code
+2. Si c'est un application React/redux, je préfère utiliser le store de redux pour stoker les informations comme access_token ou token_type...
+3. Le router pourrait aussi mieux faire. Je pensais au début que j'en aurai pas besoin, mais plus j'avance, plus j'en ai besoin. Je l'ai implémenté
+vers la fin, donc ce n'est pas top.
+4. Pour "Display the artist’s popularity as a star rating (1-5 stars)", la réponse du back-end ne contient pas cet information!
+Je vois un champ "popularity" mais je ne sais pas c'est quoi la valeur qui donne 1 ou 5 étoiles.
+5. Typescript...
+6. Un component à part pour l'affichage de chaque item avec un bon CSS qui vient avec. Comme ca à chaque fois on peut l'appeler
+directement.
+7. Pour les textes, utilises react-intl pour gérer plusieurs langues
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
