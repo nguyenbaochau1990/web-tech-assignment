@@ -25,7 +25,12 @@ class App extends Component {
         access_token: access_token,
         token_type: token_type
       })
+      this.resetUrl();
     }
+  }
+
+  resetUrl() {
+    window.location.hash=''
   }
 
   render() {
@@ -33,7 +38,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          {this.state.access_token ? <SearchArtist /> : <Login />}
+          {this.state.access_token ? 
+            <SearchArtist
+              access_token={this.state.access_token}
+              token_type={this.state.token_type}
+            /> 
+            :
+            <Login />
+          }
         </header>
       </div>
     );
