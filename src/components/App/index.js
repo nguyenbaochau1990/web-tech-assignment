@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
-import { hashFragment, extractAccessToken, extractTokenType } from './util/fragmentURL';
-import Login from './components/login';
-import SearchArtist from './components/search_artist';
-import ArtistAlbumList from './components/artist_album_list';
+import { hashFragment, extractAccessToken, extractTokenType } from '../../util/fragmentURL';
+import Login from '../login';
+import SearchArtist from '../search_artist';
+import ArtistAlbumList from '../artist_album_list';
 
 
 class App extends Component {
