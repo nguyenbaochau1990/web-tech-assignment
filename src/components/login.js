@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { loginEndpoint, client_id, redirect_uri, response_type } from '../constants'
+import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -13,4 +14,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default withRouter(Login)

@@ -3,6 +3,7 @@ import SearchInput from './search_input'
 import ArtistList from './artist_list'
 import axios from 'axios'
 import { searchArtistEndpoint, artist } from '../constants'
+import { withRouter } from 'react-router-dom'
 
 class SearchArtist extends Component {
   constructor(){
@@ -38,4 +39,4 @@ class SearchArtist extends Component {
   }
 }
 
-export default SearchArtist
+export default withRouter(SearchArtist)

@@ -57,12 +57,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            {this.state.access_token ? 
-              <Route exact path='/' component={this.searchArtistWithProps} />
-              :
-              <Route path='/' component={Login} />
-            }
+            <Route path='/search' component={this.searchArtistWithProps} />
             <Route path='/albums' component={this.artistAlbumListWithProps} />
+            <Route path='/' component={Login} />
           </Switch>
         </div>
       </Router>
